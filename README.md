@@ -28,22 +28,27 @@ The service is a Python application using Flask.
 
 * Verify configuration in 'application.cfg' (port, log level, etc).
 
+* Run tests
+```
+$ ./geocoder_test.py
+```
+
 * Run the service
 
 Output logging information to the terminal, useful for development:
 ```
-$ ./geocoder-service.py
+$ ./geocoder.py
 ```
 
 To capture output to a log file and run in the background
 ```
-$ nohup ./geocoder-service.py >geocoder-service.log 2>&1 &
+$ nohup ./geocoder.py >geocoder.log 2>&1 &
 ```
 
 By default, the development configuration will be used, to use production settings, check configuration in 'prod.cfg' and set the enviroment EXEC_MODE=prod:
 ```
 # Using bash, etc.
-$ EXEC_MODE=prod ./geocoder-service.py
+$ EXEC_MODE=prod ./geocoder.py
 ```
 
 
@@ -120,7 +125,7 @@ To add authorities, subclass the geoauthority.GeoAuthority abstract base class a
 
 * Before placing into full production, I would spend some more time on:
 
-    - Automated testing
+    - Automated testing, need better coverage, can mock authorities, etc.
     - Instrumentation - post metrics to a monitoring system such as graphite, etc.
     - Monitoring endpoint and alert system
 
