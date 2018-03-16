@@ -54,6 +54,8 @@ Most likely you'll use WSGI when running in full production mode, be sure to set
 
 ### API
 
+#### Requests
+
 Endpoints:
 
 * /addresses (GET)
@@ -65,6 +67,8 @@ Parameters:
 * latlng
 
 Comma-separated decimal representation of latitude and longitude.
+
+#### Response
 
 The service responds with a JSON object in the following general form:
 ```
@@ -80,16 +84,16 @@ The service responds with a JSON object in the following general form:
 
 Fields
 
- - status: one of
-  - OK: success (note that the response may be empty, even if successful)
-  - ERROR: service abuse or misuse
-  - FAIL: attempts to query all authorities have failed
- 
- - status-msg: optional details of status
+- status: one of
+    - OK: success (note that the response may be empty, even if successful)
+    - ERROR: service abuse or misuse
+    - FAIL: attempts to query all authorities have failed
 
- - results: list of human-readable addresses
+- status-msg: optional details of status
 
-Example
+- results: list of human-readable addresses
+
+#### Example
 
 Request
 ```
