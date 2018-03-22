@@ -22,7 +22,7 @@ class GeocoderTestCase(unittest.TestCase):
         rv = self.app.get('/addresses?latlng=41.88391%2C-179.638')
         assert b'latlng precision must be' in rv.data
 
-    def test_invalid_latlng_precision(self):
+    def test_invalid_latlng_range(self):
         rv = self.app.get('/addresses?latlng=41.88391%2C-190.63845')
         assert b'latlng out of range' in rv.data
 
